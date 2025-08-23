@@ -1,0 +1,22 @@
+ipykernel
+pandas
+numpy
+matplotlib
+plotly
+seaborn
+scikit-learn
+pymongo
+from_root
+dill
+certifi
+PyYAML
+boto3
+mypy-boto3-s3
+botocore
+fastapi
+python-multipart
+uvicorn
+jinja2
+imblearn
+-e . 
+# -e . is for, we my face error for our local packages inside 'src', due to this reason, it's important, whatever we'll write inside src, that should also be installed in our venv as a local package, along with these external modules. -e . directly goes to setup.py and will search for setup for find packages inside src, which we mentioned.
