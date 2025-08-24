@@ -1,2 +1,2 @@
 # MLOps-Proj1
-This is the 1st project of MLOps
+This is the first FinTech Payment Domain project.
