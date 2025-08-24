@@ -2,19 +2,32 @@
 2. Write the code on setup.py and pyproject.toml file to import local packages
    >> Find more about "setup.py and pyproject.toml" at crashcourse.txt
 3. Create a virtual env, activate it and install the requirements from requirements.txt
-   apt get update -y
-   sudo apt install python3
-   sudo apt install python3-pip
-   sudo apt update
-   sudo apt install python3.12-venv
    # Create & Activate the virtual environment
-   python3 -m venv venv
-   source venv/bin/activate
+   C:\Users\sandeep.d\AppData\Local\Programs\Python\Python313\python.exe -m venv insurance
+   .\insurance\Scripts\Activate
    # Deleting a venv
    deactivate                 # first, exit the venv if active
-   rm -rf  MLOps-Proj1        # deletes the virtual environment folder
-   add required modules to requirements.txt
+   #  To delete the virtual environment folder add required modules to requirements.txt delete the folder for  MLOps-Proj1
    Do "pip install -r requirements.txt"
+   # If pip not present, then 
+
+   # Run this inside your activated venv:
+   python -m ensurepip --upgrade
+   # This will reinstall pip inside your virtual environment and create the missing pip.exe file
+
+   # Then also upgrade pip:
+   python -m pip install --upgrade pip
+
+   # Now check if pip.exe exists:
+   dir .\insurance\Scripts\      # You should see pip.exe and pip3.exe in that folder
+
+   # if stll "pip list" not works, then 
+   # If that still doesn’t create pip.exe, we’ll force reinstall pip:
+   python -m pip install --upgrade --force-reinstall pip
+
+   # Verify,
+   dir .\insurance\Scripts\
+   pip --version
 4. Do a "pip list" on terminal to make sure you have local packages installed.
 
 
