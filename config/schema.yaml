@@ -1,0 +1,43 @@
+columns:
+  - id: int
+  - Gender: category
+  - Age: int
+  - KYC_Verified: int
+  - Region_Code: float
+  - Previously_Onboarded: int
+  - Account_Tenure: category
+  - Is_Fraud: category
+  - Avg_Txn_Amt: float
+  - Payment_Channel: float
+  - Vintage: int
+  - Response: int
+
+
+numerical_columns:
+  - Age
+  - KYC_Verified
+  - Region_Code
+  - Previously_Onboarded
+  - Avg_Txn_Amt
+  - Payment_Channel
+  - Vintage
+  - Response
+
+categorical_columns:
+  - Gender
+  - Account_Tenure
+  - Is_Fraud
+
+drop_columns: _id
+
+# for data transformation
+
+# Standard Scaling (Z-score scaling)
+num_features:
+  - Age
+  - Vintage
+
+
+# Min-Max Scaling
+mm_columns:
+  - Avg_Txn_Amt
