@@ -56,10 +56,6 @@ MODEL_TRAINER_TRAINED_MODEL_DIR: str = "trained_model"
 MODEL_TRAINER_TRAINED_MODEL_NAME: str = "model.pkl"
 MODEL_TRAINER_EXPECTED_SCORE: float = 0.6
 MODEL_TRAINER_MODEL_CONFIG_FILE_PATH: str = os.path.join("config", "model.yaml")
-# There are the parameters for to train RandomForestClassifier model. You can use randomsearchcv to find best parameters which we did in exp notebook.
-# You can do those experiments and put the best parameters here. Here we are just hardcoding the values for production code. 
-# You can put all in together in config/model.yaml file
-# and read the file to get the parameters
 MODEL_TRAINER_N_ESTIMATORS=200
 MODEL_TRAINER_MIN_SAMPLES_SPLIT: int = 7
 MODEL_TRAINER_MIN_SAMPLES_LEAF: int = 6
@@ -71,7 +67,7 @@ MIN_SAMPLES_SPLIT_RANDOM_STATE: int = 101
 MODEL Evaluation related constants
 """
 MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
-MODEL_BUCKET_NAME = "my-model-mlopsproj"
+MODEL_BUCKET_NAME = "mlops1st-fintech-proj"
 MODEL_PUSHER_S3_KEY = "model-registry"
 
 
