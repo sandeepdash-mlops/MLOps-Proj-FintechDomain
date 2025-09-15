@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Service Prediction</title>
+    <!-- Corrected the CSS path -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Service Prediction</h1>
+
+        <form method="post" action="/">
+            <label for="Gender">Gender (1: Male, 0: Female):</label>
+            <input type="number" id="Gender" name="Gender" min="0" max="1" required>
+
+            <label for="Age">Age:</label>
+            <input type="number" id="Age" name="Age" required>
+
+            <label for="KYC_Verified">KYC Verified (0: No, 1: Yes):</label>
+            <input type="number" id="KYC_Verified" name="KYC_Verified" min="0" max="1" required>
+
+            <label for="Region_Code">Region Code:</label>
+            <input type="number" step="0.01" id="Region_Code" name="Region_Code" required>
+
+            <label for="Previously_Onboarded">Previously Onboarded (0: No, 1: Yes):</label>
+            <input type="number" id="Previously_Onboarded" name="Previously_Onboarded" min="0" max="1" required>
+
+            <label for="Avg_Txn_Amt">Avg Txn Amt:</label>
+            <input type="number" step="0.01" id="Avg_Txn_Amt" name="Annual_Premium" required>
+
+            <label for="Payment_Channel">Payment Channel:</label>
+            <input type="number" step="0.01" id="Payment_Channel" name="Policy_Sales_Channel" required>
+
+            <label for="Vintage">Vintage:</label>
+            <input type="number" id="Vintage" name="Vintage" required>
+
+            <label for="Account_Tenure_lt_1_Year">Account Tenure < 1 Year (0: No, 1: Yes):</label>
+            <input type="number" id="Account_Tenure_lt_1_Year" name="Account_Tenure_lt_1_Year" min="0" max="1" required>
+
+            <label for="Account_Tenure_gt_2_Years">Account Tenure > 2 Years (0: No, 1: Yes):</label>
+            <input type="number" id="Account_Tenure_gt_2_Years" name="Account_Tenure_gt_2_Years" min="0" max="1" required>
+
+            <label for="Chargeback_History_Yes">Chargeback History (0: No, 1: Yes):</label>
+            <input type="number" id="Chargeback_History_Yes" name="Chargeback_History_Yes" min="0" max="1" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <form method="get" action="/train">
+            <button type="submit" class="train-button">Train Model</button>
+        </form>
+
+        {% if context %}
+            <div class="result">
+                <h2>Result: {{ context }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

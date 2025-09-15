@@ -90,7 +90,7 @@ class DataTransformation:
             "Account_Tenure_< 1 Year": "Account_Tenure_lt_1_Year",
             "Account_Tenure_> 2 Years": "Account_Tenure_gt_2_Years"
         })
-        for col in ["Account_Tenure_1_Year", "Account_Tenure_2_Years", "Account_Tenure_Yes"]:
+        for col in ["Account_Tenure_lt_1_Year", "Account_Tenure_gt_2_Years", "Chargeback_History_Yes"]:
             if col in df.columns:
                 df[col] = df[col].astype('int')
         return df
@@ -146,7 +146,6 @@ class DataTransformation:
             input_feature_test_arr = preprocessor.transform(input_feature_test_df)
             logging.info("Transformation done end to end to train-test df.")
 
-            # SMOTEEN creates new minority class samples and deletes confusing majority class samples to balance the dataset and reduce noise.
             logging.info("Applying SMOTEENN for handling imbalanced dataset.")
             smt = SMOTEENN(sampling_strategy="minority")
             input_feature_train_final, target_feature_train_final = smt.fit_resample(

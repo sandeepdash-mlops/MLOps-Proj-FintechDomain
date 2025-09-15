@@ -65,12 +65,12 @@ accessing databases, or making network requests.
 
 In our code:
 ----------------------------------
-async def get_vehicle_data(self):
+async def get_fintech_data(self):
     form = await self.request.form()
     # fetch form data here
 ----------------------------------
 
-This means `get_vehicle_data` won’t block the app. The `await` keyword tells Python to pause this function temporarily while it waits 
+This means `get_fintech_data` won’t block the app. The `await` keyword tells Python to pause this function temporarily while it waits 
 for data but allows the app to keep working on other tasks.
 
 In short:

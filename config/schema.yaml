@@ -6,7 +6,7 @@ columns:
   - Region_Code: float
   - Previously_Onboarded: int
   - Account_Tenure: category
-  - Is_Fraud: category
+  - Chargeback_History: category
   - Avg_Txn_Amt: float
   - Payment_Channel: float
   - Vintage: int
@@ -26,7 +26,7 @@ numerical_columns:
 categorical_columns:
   - Gender
   - Account_Tenure
-  - Is_Fraud
+  - Chargeback_History
 
 drop_columns: _id
 
