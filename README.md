@@ -51,6 +51,8 @@ Step 2:
 Write the setup for importing local packages in setup.py and pyproject.toml files.
 Tip: Learn more about these files from crashcourse.txt.
 
+---
+
 ### 2️⃣ Create Virtual Environment
 
 Create a virtual environment and install required dependencies from requirements.txt
@@ -72,6 +74,8 @@ Verify the local packages by running:
 pip list
 ```
 
+---
+
 ### 3️⃣ Setup MongoDB Atlas
 
 Step 3: MongoDB Atlas Configuration
@@ -87,7 +91,9 @@ Verify the data in MongoDB Atlas under Database > Browse Collections.
 * Add IP: `0.0.0.0/0`
 * Get **connection string** (Python driver, v3.6+)
 * Save as environment variable `MONGODB_URL`
-  
+
+---
+
 📝 Logging, Exception Handling, and EDA
 
 Step 5: Set Up Logging and Exception Handling
@@ -95,10 +101,14 @@ Create logging and exception handling modules. Test them on a demo file demo.py.
 Step 6: Exploratory Data Analysis (EDA) and Feature Engineering
 Analyze and engineer features in the EDA and Feature Engg notebook for further processing in the pipeline.
 
+---
+
 ### 4️⃣ Run Notebooks
 
 * `notebook/mongoDB_demo.ipynb` → push sample data to MongoDB
 * `EDA & Feature Engineering` notebooks
+
+---
 
 ### 5️⃣ Data Pipeline Components
 
@@ -117,6 +127,8 @@ $env:MONGODB_URL = "mongodb+srv://<username>:<password>...."
 
 Note: On Windows, you can also set environment variables through the system settings.
 
+---
+
 🔍 Data Validation, Transformation & Model Training
 
 Step 8: Data Validation
@@ -125,6 +137,8 @@ Step 9: Data Transformation
 Implement data transformation logic in components.data_transformation.py and create estimator.py in the entity folder.
 Step 10: Model Training
 Define and implement model training steps in components.model_trainer.py using code from estimator.py.
+
+---
 
 ### 🌐 AWS Setup for Model Evaluation & Deployment
 
@@ -144,6 +158,7 @@ Step 12: Model Evaluation and Pushing to S3
 1. Create an S3 bucket named my-model-mlopsproj in the us-east-1 region.
 2. Develop code to push/pull models to/from the S3 bucket in src.aws_storage and entity/s3_estimator.py.
 
+---
 
 🚀 Model Evaluation, Model Pusher, and Prediction Pipeline
 
@@ -152,6 +167,8 @@ Step 13: Model Evaluation & Model Pusher
 2. Create Prediction Pipeline and set up app.py for API integration.
 Step 14: Static and Template Directory
 Add static and template directories for web UI.
+
+---
 
 ### 🔄 Deployment: CI/CD Setup with Docker, GitHub Actions, and AWS
 
@@ -169,6 +186,8 @@ Step 16: AWS EC2 and ECR
 Step 17: Final Steps
 1. Open the 5000 port on the EC2 instance.
 2. Access the deployed app by visiting http://<public_ip>:5000.
+
+---
 
 ## 📈 Highlights
 
