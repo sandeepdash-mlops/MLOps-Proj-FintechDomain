@@ -141,4 +141,4 @@ If you found this project helpful or have any questions, feel free to reach out!
 
 ---
 
-This README provides a structured walkthrough of the MLOps project, showcasing the end-to-end pipeline, cloud integration, CI/CD setup, and robust data handling capabilities.
+This README provides a structured walkthrough of the MLOps FinTech Domain project, showcasing the end-to-end pipeline, cloud integration, CI/CD setup, and robust data handling capabilities.
