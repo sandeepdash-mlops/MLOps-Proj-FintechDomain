@@ -47,7 +47,7 @@ Step 1: Start by executing the template.py file to create the initial project te
 
 Step 2:
 Write the setup for importing local packages in setup.py and pyproject.toml files.
-Tip: Learn more about these files from crashcourse.txt.
+* Tip: Learn more about these files from crashcourse.txt.
 
 ---
 
