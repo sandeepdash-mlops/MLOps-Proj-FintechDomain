@@ -142,7 +142,6 @@ If you found this project helpful or have any questions, feel free to reach out!
 📱 Phone: (+91) 7008-62-6663
 📧 Email: sandeepdashmlops@gmail.com
 💻 GitHub: https://github.com/sandeepdash-mlops
-
 ---
 
 This README provides a structured walkthrough of the MLOps FinTech Domain project, showcasing the end-to-end pipeline, cloud integration, CI/CD setup, and robust data handling capabilities.
