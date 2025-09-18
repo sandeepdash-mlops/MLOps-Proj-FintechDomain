@@ -139,6 +139,14 @@ CI/CD Automation with GitHub Actions, Docker, AWS EC2, and ECR
 ## 💬 Connect
 If you found this project helpful or have any questions, feel free to reach out!
 
+📱 Phone: (+91) 7008-62-6663
+📧 Email: sandeepdashmlops@gmail.com
+💻 GitHub: https://github.com/sandeepdash-mlops
+
+📧 Email: [sandeepdashmlops@gmail.com](mailto:sandeepdashmlops@gmail.com)  
+📱 Phone: (+91) 7008-62-6663  
+🔗 LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/yourprofile/)  
+💻 GitHub: [Your GitHub](https://github.com/yourusername)
 ---
 
 This README provides a structured walkthrough of the MLOps FinTech Domain project, showcasing the end-to-end pipeline, cloud integration, CI/CD setup, and robust data handling capabilities.
