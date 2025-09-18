@@ -41,13 +41,12 @@
 
 ### 1️⃣ Setup Project Template
 
-Step 1: Start by executing the template.py file to create the initial project template, which includes the required folder structure and placeholder files.
+* Start by executing the template.py file to create the initial project template, which includes the required folder structure and placeholder files.
 
 ### Package Management
 
-Step 2:
-Write the setup for importing local packages in setup.py and pyproject.toml files.
-Tip: Learn more about these files from crashcourse.txt.
+* Write the setup for importing local packages in setup.py and pyproject.toml files.
+* Tip: Learn more about these files from crashcourse.txt.
 
 ---
 
@@ -76,14 +75,14 @@ pip list
 
 ### 3️⃣ Setup MongoDB Atlas
 
-Step 3: MongoDB Atlas Configuration
-Sign up for MongoDB Atlas and create a new project.
-Set up a free M0 cluster, configure the username and password, and allow access from any IP address (0.0.0.0/0).
-Retrieve the MongoDB connection string for Python and save it (replace <password> with your password).
-Step 4: Pushing Data to MongoDB
-Create a folder named notebook, add the dataset, and create a notebook file mongoDB_demo.ipynb.
-Use the notebook to push data to the MongoDB database.
-Verify the data in MongoDB Atlas under Database > Browse Collections.
+* MongoDB Atlas Configuration
+1. Sign up for MongoDB Atlas and create a new project.
+2. Set up a free M0 cluster, configure the username and password, and allow access from any IP address (0.0.0.0/0).
+3. Retrieve the MongoDB connection string for Python and save it (replace <password> with your password).
+* Pushing Data to MongoDB
+1. Create a folder named notebook, add the dataset, and create a notebook file mongoDB_demo.ipynb.
+2. Use the notebook to push data to the MongoDB database.
+3. Verify the data in MongoDB Atlas under Database > Browse Collections.
 
 * Create **M0 cluster**, set DB user + password
 * Add IP: `0.0.0.0/0`
@@ -94,10 +93,10 @@ Verify the data in MongoDB Atlas under Database > Browse Collections.
 
 📝 Logging, Exception Handling, and EDA
 
-Step 5: Set Up Logging and Exception Handling
-Create logging and exception handling modules. Test them on a demo file demo.py.
-Step 6: Exploratory Data Analysis (EDA) and Feature Engineering
-Analyze and engineer features in the EDA and Feature Engg notebook for further processing in the pipeline.
+* Set Up Logging and Exception Handling
+* Create logging and exception handling modules. Test them on a demo file demo.py.
+* Exploratory Data Analysis (EDA) and Feature Engineering
+* Analyze and engineer features in the EDA and Feature Engg notebook for further processing in the pipeline.
 
 ---
 
@@ -110,11 +109,11 @@ Analyze and engineer features in the EDA and Feature Engg notebook for further p
 
 ### 5️⃣ Data Pipeline Components
 
-Step 7: Data Ingestion Pipeline
-Define MongoDB connection functions in configuration.mongo_db_connections.py.
-Develop data ingestion components in the data_access and components.data_ingestion.py files to fetch and transform data.
-Update entity/config_entity.py and entity/artifact_entity.py with relevant ingestion configurations.
-Run demo.py after setting up MongoDB connection as an environment variable.
+* Data Ingestion Pipeline
+* Define MongoDB connection functions in configuration.mongo_db_connections.py.
+* Develop data ingestion components in the data_access and components.data_ingestion.py files to fetch and transform data.
+* Update entity/config_entity.py and entity/artifact_entity.py with relevant ingestion configurations.
+* Run demo.py after setting up MongoDB connection as an environment variable.
 
 Setting Environment Variables
 Set MongoDB URL:
@@ -122,7 +121,7 @@ Set MongoDB URL:
 1. For Bash-
 export MONGODB_URL="mongodb+srv://<username>:<password>...."
 
-3. For Powershell-
+2. For Powershell-
 $env:MONGODB_URL = "mongodb+srv://<username>:<password>...."
 
 Note: On Windows, you can also set environment variables through the system settings.
@@ -131,18 +130,18 @@ Note: On Windows, you can also set environment variables through the system sett
 
 🔍 Data Validation, Transformation & Model Training
 
-Step 8: Data Validation
+* Data Validation
 Define schema in config.schema.yaml and implement data validation functions in utils.main_utils.py.
-Step 9: Data Transformation
+* Data Transformation
 Implement data transformation logic in components.data_transformation.py and create estimator.py in the entity folder.
-Step 10: Model Training
+* Model Training
 Define and implement model training steps in components.model_trainer.py using code from estimator.py.
 
 ---
 
 ### 🌐 AWS Setup for Model Evaluation & Deployment
 
-Step 11: AWS Setup
+* AWS Setup
 1. Log in to the AWS console, create an IAM user, and grant AdministratorAccess.
 
 Set AWS credentials as environment variables.
@@ -154,7 +153,7 @@ Set AWS credentials as environment variables.
 
 2. Configure S3 Bucket and add access keys in constants.__init__.py.
 
-Step 12: Model Evaluation and Pushing to S3
+* Model Evaluation and Pushing to S3
 1. Create an S3 bucket named my-model-mlopsproj in the us-east-1 region.
 2. Develop code to push/pull models to/from the S3 bucket in src.aws_storage and entity/s3_estimator.py.
 
@@ -162,7 +161,7 @@ Step 12: Model Evaluation and Pushing to S3
 
 🚀 Model Evaluation, Model Pusher, and Prediction Pipeline
 
-Step 13: Model Evaluation & Model Pusher
+* Model Evaluation & Model Pusher
 1. Implement model evaluation and deployment components.
 2. Create Prediction Pipeline and set up app.py for API integration.
 Step 14: Static and Template Directory
@@ -172,18 +171,18 @@ Add static and template directories for web UI.
 
 ### 🔄 Deployment: CI/CD Setup with Docker, GitHub Actions, and AWS
 
-Step 15: Docker and GitHub Actions
+* Docker and GitHub Actions
 1. Create Dockerfile and .dockerignore.
 2. Set up GitHub Actions with AWS authentication by creating secrets in GitHub for:
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 AWS_DEFAULT_REGION
 ECR_REPO
-Step 16: AWS EC2 and ECR
+* AWS EC2 and ECR
 1. Set up an EC2 instance for deployment.
 2. Install Docker on the EC2 machine.
 3. Connect EC2 as a self-hosted runner on GitHub.
-Step 17: Final Steps
+* Final Steps
 1. Open the 5000 port on the EC2 instance.
 2. Access the deployed app by visiting http://<public_ip>:5000.
 
