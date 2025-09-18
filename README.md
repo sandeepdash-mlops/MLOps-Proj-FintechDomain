@@ -1,5 +1,3 @@
-
-
 # 🚀 MLOps Project – Fintech Data Pipeline
 
 > **An end-to-end MLOps pipeline** Welcome to this MLOps project, designed to demonstrate a robust pipeline for managing fintech payment data. This project aims to showcasing the various tools, techniques, services, and features that go into building and deploying a machine learning pipeline for real-world data management. Follow along to learn about project setup, data processing, model deployment, and CI/CD automation! 
@@ -218,11 +216,13 @@ Step 17: Final Steps
 ## 💬 Connect
 If you found this project helpful or have any questions, feel free to reach out!
 
+
 📱 Phone: (+91) 7008-62-6663
 
 📧 Email: sandeepdashmlops@gmail.com
 
 💻 GitHub: https://github.com/sandeepdash-mlops
+
 ---
 
 This README provides a structured walkthrough of the MLOps FinTech Domain project, showcasing the end-to-end pipeline, cloud integration, CI/CD setup, and robust data handling capabilities.
