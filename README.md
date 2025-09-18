@@ -120,9 +120,11 @@ Run demo.py after setting up MongoDB connection as an environment variable.
 
 Setting Environment Variables
 Set MongoDB URL:
-For Bash-
+
+1. For Bash-
 export MONGODB_URL="mongodb+srv://<username>:<password>...."
-For Powershell-
+
+3. For Powershell-
 $env:MONGODB_URL = "mongodb+srv://<username>:<password>...."
 
 Note: On Windows, you can also set environment variables through the system settings.
