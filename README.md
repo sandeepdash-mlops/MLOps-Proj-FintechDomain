@@ -39,19 +39,11 @@
 
 ---
 
-## 📂 Project Workflow
+## 🎯 Project Workflow Summary
 
-```mermaid
-flowchart LR
-    A[Project Template] --> B[Data Ingestion]
-    B --> C[Data Validation]
-    C --> D[Data Transformation]
-    D --> E[Model Training]
-    E --> F[Model Evaluation]
-    F --> G[Model Pusher (S3 Registry)]
-    G --> H[Prediction Pipeline / app.py]
-    H --> I[Docker Image -> AWS ECR -> EC2 Deployment]
-```
+- 📥 **Data Ingestion** ➔ 🔍 **Data Validation** ➔ 🔄 **Data Transformation**  
+- 🤖 **Model Training** ➔ 📊 **Model Evaluation** ➔ 📦 **Model Deployment**  
+- ⚙️ **CI/CD Automation** with **GitHub Actions**, **Docker**, **AWS ECR**, and **EC2**
 
 ---
 
