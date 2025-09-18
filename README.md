@@ -8,7 +8,7 @@
 
 * 📦 **Project Template Automation** with `template.py`
 * ⚙️ **Local Package Management** via `setup.py` & `pyproject.toml`
-* 🐍 **Isolated Environments** using `venv`
+* 🐍 **Isolated Environments** using python's `venv`
 * 🍃 **Data Storage** on **MongoDB Atlas** (cloud hosted NoSQL DB)
 * 📑 **Structured Logging & Exception Handling**
 * 📊 **EDA & Feature Engineering** notebooks
