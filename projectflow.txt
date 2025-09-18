@@ -165,6 +165,7 @@
         >> Now run second "Configure" command (./run.sh) and runner will get connected to Github
         >> To crosscheck, go back to Github and click on Runner and you will see runner state as "idle"
         >> If you do ctrl+c on EC2 server then runner will shut then restart with "./run.sh"
+        >> If you exit the termial it'll stop and runner will be go offline, to make it always available read crashcourse.txt, steps are mentioned below.
 
 30. Setup your Github secrets: (Github project>Settings>SecretandVariable>Actions>NewRepoSecret)
       AWS_ACCESS_KEY_ID
