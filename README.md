@@ -194,10 +194,15 @@ Step 17: Final Steps
 ## 📈 Highlights
 
 ✅ **Demonstrates full MLOps lifecycle** – data → ML → deployment
+
 ✅ **Cloud-native** with AWS (IAM, S3, ECR, EC2)
+
 ✅ **Production-ready CI/CD** with GitHub Actions & Docker
+
 ✅ **Secure credentials** via GitHub Secrets
+
 ✅ **Scalable architecture** with modular pipeline design
+
 ✅ **Hands-on with both ML & DevOps** aspects
 
 ---
