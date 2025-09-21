@@ -1,6 +1,10 @@
 # Use an official Python 3.10 image from Docker Hub
 FROM python:3.10-slim-buster
 
+# Set environment variables to prevent Python from writing .pyc files and buffer output
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
 # Set the working directory
 WORKDIR /app
 
