@@ -1,7 +1,11 @@
 # 🚀 MLOps Project – Fintech Data Pipeline
 
-> **An end-to-end MLOps pipeline** Welcome to this MLOps project, designed to demonstrate a robust pipeline for managing fintech data. This project aims to showcasing the various tools, techniques, services, and features that go into building and deploying a machine learning pipeline for real-world data management. Follow along to learn about project setup, data processing, model deployment, and CI/CD automation! 
+> **An end-to-end MLOps pipeline:**  
+> Welcome to this MLOps project designed to demonstrate a robust pipeline for managing fintech data.  
+> This project showcases the tools, techniques, services, and best practices involved in building and deploying a machine learning pipeline for real-world fintech applications.  
+> Follow along to explore project setup, data processing, model deployment, and CI/CD automation!
 
+> This project solves a **binary classification problem** using **supervised machine learning** to predict whether a customer is likely to use our payment service or not.
 ---
 
 ## ✨ Features
