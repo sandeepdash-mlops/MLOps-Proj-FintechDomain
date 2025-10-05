@@ -1,14 +1,22 @@
 # 🚀 MLOps Project – Fintech Data Pipeline
 
-> **An end-to-end MLOps pipeline:**  
-> Welcome to this MLOps project designed to demonstrate a robust pipeline for managing fintech data.  
-> This project showcases the tools, techniques, services, and best practices involved in building and deploying a machine learning pipeline for real-world fintech applications.  
-> Follow along to explore project setup, data processing, model deployment, and CI/CD automation!
+## Overview
+Welcome to this MLOps project, which demonstrates a robust end-to-end pipeline for managing fintech data.  
+This project showcases the tools, techniques, services, and best practices involved in building and deploying a machine learning pipeline for real-world fintech applications.  
+Follow along to explore project setup, data processing, model deployment, and CI/CD automation!
 
-> This project addresses a binary classification problem using supervised machine learning to help banks and NBFCs use this model via iServeU’s BaaS platform to predict which of their customers are likely to use various payment services, such as UPI, IMPS, QR, POS, and Debit/Credit Cards.
+## Project Goal
+This project addresses a **binary classification problem** using supervised machine learning to help **banks and NBFCs** leverage this model through **iServeU’s BaaS platform**.  
+
+The model predicts which of their customers are likely to use various payment services, such as:  
+- UPI  
+- IMPS  
+- QR  
+- POS  
+- Debit/Credit Cards
 ---
 
-## ✨ Features
+## ✨ Key Features
 
 * 📦 **Project Template Automation** with `template.py`
 * ⚙️ **Local Package Management** via `setup.py` & `pyproject.toml`
