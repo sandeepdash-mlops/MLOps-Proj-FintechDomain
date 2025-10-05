@@ -58,7 +58,6 @@ The model predicts which of their customers are likely to use various payment se
 ### Package Management
 
 * Write the setup for importing local packages in setup.py and pyproject.toml files.
-* Tip: Learn more about these files from crashcourse.txt.
 
 ---
 
