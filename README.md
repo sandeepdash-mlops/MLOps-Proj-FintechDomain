@@ -12,7 +12,7 @@ The model predicts which of their customers are likely to use various payment se
 - UPI  
 - IMPS  
 - QR  
-- POS  
+- POS Solutions 
 - Debit/Credit Cards
 ---
 
