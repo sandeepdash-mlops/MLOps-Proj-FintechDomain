@@ -5,7 +5,7 @@
 > This project showcases the tools, techniques, services, and best practices involved in building and deploying a machine learning pipeline for real-world fintech applications.  
 > Follow along to explore project setup, data processing, model deployment, and CI/CD automation!
 
-> This project solves a **binary classification problem** using **supervised machine learning** to predict whether a customer is likely to use our payment service or not.
+> This project addresses a binary classification problem using supervised machine learning to help banks and NBFCs use this model via iServeU’s BaaS platform to predict which of their customers are likely to use various payment services, such as UPI, IMPS, QR, POS, and Debit/Credit Cards.
 ---
 
 ## ✨ Features
