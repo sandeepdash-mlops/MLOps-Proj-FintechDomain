@@ -38,6 +38,7 @@ The model predicts which of their customers are likely to use various payment se
 | Layer                | Tools & Services                                               |
 | -------------------- | -------------------------------------------------------------- |
 | **Programming**      | Python 3.13                                                    |
+| **ML Framework**     | Scikit-Learn                                                   |
 | **Version Control**  | Git, GitHub                                                    |
 | **Environment Mgmt** | venv                                                           |
 | **Database**         | MongoDB Atlas                                                  |
