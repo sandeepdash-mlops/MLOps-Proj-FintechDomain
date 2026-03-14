@@ -1,238 +1,244 @@
-# 🚀 MLOps Project – Fintech Data Pipeline
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2a1a,100:0ea5e9&height=220&section=header&text=FinTech-MLOps&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Binary%20Classification%20Pipeline%20for%20BaaS%20Payment%20Prediction&descAlignY=58&descSize=20&descColor=7dd3fc" alt="FinTech MLOps Banner"/>
 
-## Overview
-Welcome to this MLOps project, which demonstrates a robust end-to-end pipeline for managing fintech data.  
-This project showcases the tools, techniques, services, and best practices involved in building and deploying a machine learning pipeline for real-world fintech applications.  
-Follow along to explore project setup, data processing, model deployment, and CI/CD automation!
+[![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB_Atlas-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/atlas)
+[![Docker](https://img.shields.io/badge/Docker-Containerization-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com/)
+[![AWS S3](https://img.shields.io/badge/AWS_S3-Model_Registry-FF9900?style=for-the-badge&logo=amazons3&logoColor=white)](https://aws.amazon.com/s3/)
+[![AWS ECR](https://img.shields.io/badge/AWS_ECR-Image_Registry-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/ecr/)
+[![AWS EC2](https://img.shields.io/badge/AWS_EC2-Deployment-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white)](https://aws.amazon.com/ec2/)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/features/actions)
+[![Status](https://img.shields.io/badge/Status-Production_Ready-16a34a?style=for-the-badge)]()
 
-## Project Goal
-This project addresses a **binary classification problem** using supervised machine learning to help **banks and NBFCs** leverage this model through **iServeU’s BaaS platform**.  
+<br/>
 
-The model predicts which of their customers are likely to use various payment services, such as:  
-- UPI  
-- IMPS  
-- QR  
-- POS Solutions 
-- Debit/Credit Cards
+> **End-to-end MLOps pipeline for a fintech binary classification model — predicting customer payment service adoption for banks and NBFCs via iServeU's BaaS platform — with MongoDB Atlas, AWS cloud integration, Docker containerization, and GitHub Actions CI/CD on self-hosted EC2 runners.**
+
+</div>
+
+---
+
+## 📌 What This Project Solves
+
+Banks and NBFCs onboarded to **iServeU's Banking-as-a-Service (BaaS) platform** need to know which customers are likely to adopt payment services — UPI, IMPS, QR, POS, or Cards — to drive targeted activation campaigns.
+
+This project delivers a **production-ready binary classification model** wrapped in a REST API, deployed on AWS, with a fully automated CI/CD pipeline from code push to live inference.
+
+---
+
+## 🏗️ Architecture Overview
+
+```
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │                         Data Layer                                   │
+  │   Raw Data → MongoDB Atlas (Cloud NoSQL) → Data Ingestion Pipeline   │
+  └──────────────────────────────┬───────────────────────────────────────┘
+                                 │
+  ┌──────────────────────────────▼───────────────────────────────────────┐
+  │                        ML Pipeline                                   │
+  │  Ingestion → Validation → Transformation → Training → Evaluation     │
+  └──────────────────────────────┬───────────────────────────────────────┘
+                                 │
+                    ┌────────────▼────────────┐
+                    │      AWS S3 Bucket       │
+                    │   Model Registry / Store │
+                    └────────────┬────────────┘
+                                 │
+  ┌──────────────────────────────▼───────────────────────────────────────┐
+  │                     CI/CD — GitHub Actions                           │
+  │        Push → Test → Docker Build → Push to ECR → Deploy to EC2     │
+  └──────────────────────────────┬───────────────────────────────────────┘
+                                 │
+              ┌──────────────────▼──────────────────┐
+              │           AWS ECR                    │
+              │       Docker Image Registry          │
+              └──────────────────┬──────────────────┘
+                                 │
+              ┌──────────────────▼──────────────────┐
+              │     AWS EC2 (Self-Hosted Runner)     │
+              │   Flask/FastAPI App on port 5000     │
+              │   http://<public_ip>:5000            │
+              └─────────────────────────────────────┘
+```
+
 ---
 
 ## ✨ Key Features
 
-* 📦 **Project Template Automation** with `template.py`
-* ⚙️ **Local Package Management** via `setup.py` & `pyproject.toml`
-* 🐍 **Isolated Environments** using python's `venv`
-* 🍃 **Data Storage** on **MongoDB Atlas** (cloud hosted NoSQL DB)
-* 📑 **Structured Logging & Exception Handling**
-* 📊 **EDA & Feature Engineering** notebooks
-* 🔄 **Data Ingestion → Validation → Transformation → Training** workflow
-* ☁️ **AWS Integration**: S3 for model registry, ECR for images, EC2 for hosting
-* 🐳 **Containerization** with Docker
-* 🔐 **GitHub Secrets** for AWS credentials
-* 🤖 **CI/CD with GitHub Actions** + **self-hosted runners on EC2**
-* 🌐 **Deployed Web App** (Flask/FastAPI) running on **port 5000**
+| Feature | Detail |
+|---|---|
+| 🏦 **Fintech Domain** | Payment service adoption prediction for BaaS — UPI, IMPS, QR, POS, Cards |
+| 🍃 **Cloud NoSQL Storage** | MongoDB Atlas M0 cluster for raw data ingestion and access |
+| 🔄 **Modular ML Pipeline** | 4-stage pipeline: Ingestion → Validation → Transformation → Training |
+| ☁️ **AWS Native** | S3 model registry, ECR image store, EC2 deployment, IAM access control |
+| 🐳 **Containerized** | Dockerized Flask/FastAPI app with `.dockerignore` and ECR push |
+| 🔐 **Secrets Management** | AWS credentials via GitHub Secrets — never hardcoded |
+| 🤖 **Self-Hosted CI/CD** | GitHub Actions runner on EC2 — build and deploy on your own infra |
+| 📝 **Production Code Quality** | Structured logging, exception handling, config & artifact entities |
 
 ---
 
-## 🛠️ Tech Stack
+## 📁 Repository Structure
 
-| Layer                | Tools & Services                                               |
-| -------------------- | -------------------------------------------------------------- |
-| **Programming**      | Python 3.13                                                    |
-| **ML Framework**     | Scikit-Learn                                                   |
-| **Version Control**  | Git, GitHub                                                    |
-| **Environment Mgmt** | venv                                                           |
-| **Database**         | MongoDB Atlas                                                  |
-| **Orchestration**    | Modular ML pipeline (constants, config, components, artifacts) |
-| **Cloud**            | AWS S3, EC2, IAM, ECR                                          |
-| **Containerization** | Docker                                                         |
-| **CI/CD**            | GitHub Actions, self-hosted runners                            |
-| **Deployment**       | Flask/FastAPI app on EC2                                       |
+```
+fintech-mlops/
+├── template.py                          # 🏗️ Project scaffold generator
+├── setup.py / pyproject.toml           # 📦 Local package management
+├── requirements.txt                     # 📋 Dependencies
+├── app.py                               # 🌐 Flask/FastAPI inference API
+├── demo.py                              # 🧪 Pipeline test runner
+├── Dockerfile / .dockerignore           # 🐳 Container definition
+├── .github/workflows/                   # 🔄 GitHub Actions CI/CD
+├── notebook/
+│   ├── mongoDB_demo.ipynb               # 🍃 Push data to MongoDB Atlas
+│   └── EDA_Feature_Engineering.ipynb   # 📊 Exploratory analysis
+├── src/
+│   ├── configuration/
+│   │   └── mongo_db_connections.py      # 🔗 MongoDB connection handler
+│   ├── data_access/                     # 📥 MongoDB data fetch layer
+│   ├── components/
+│   │   ├── data_ingestion.py            # 📥 Ingest from MongoDB
+│   │   ├── data_validation.py           # 🔍 Schema & quality checks
+│   │   ├── data_transformation.py       # 🔄 Feature transformation
+│   │   └── model_trainer.py             # 🏋️ Model training
+│   ├── entity/
+│   │   ├── config_entity.py             # ⚙️  Pipeline config definitions
+│   │   ├── artifact_entity.py           # 📦 Artifact path definitions
+│   │   ├── estimator.py                 # 🤖 Model wrapper
+│   │   └── s3_estimator.py              # ☁️  S3 model push/pull
+│   ├── aws_storage/                     # ☁️  S3 integration layer
+│   ├── utils/main_utils.py              # 🔧 Shared utilities
+│   ├── logger/                          # 📝 Structured logging
+│   └── constants/__init__.py            # 🔑 S3 bucket & region constants
+├── config/schema.yaml                   # 📐 Data schema definition
+└── static/ & templates/                 # 🖥️ Web UI assets
+```
 
 ---
 
-## ⚡ Project Setup and Structure
+## ⚡ Quick Setup
 
-### 1️⃣ Setup Project Template
-
-* Start by executing the template.py file to create the initial project template, which includes the required folder structure and placeholder files.
-
-### Package Management
-
-* Write the setup for importing local packages in setup.py and pyproject.toml files.
-* Tip: Learn more about docs.txt.
-
----
-
-### 2️⃣ Create Virtual Environment
-
-Create a virtual environment and install required dependencies from requirements.txt
+### 1️⃣ Environment
 
 ```bash
-# Get Python path
-python -c "import sys; print(sys.executable)"
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate          # Linux/Mac
+.\venv\Scripts\Activate           # Windows
 
-# Create & activate venv
-python -m venv insurance
-.\insurance\Scripts\Activate
-
-# Install requirements
 pip install -r requirements.txt
+pip list                          # verify local packages installed
 ```
-Verify the local packages by running:
+
+### 2️⃣ MongoDB Atlas
 
 ```bash
-pip list
+# Set connection string as environment variable
+export MONGODB_URL="mongodb+srv://<username>:<password>@cluster.mongodb.net/"
+
+# Push sample data to Atlas
+jupyter notebook notebook/mongoDB_demo.ipynb
+```
+
+> Create a free **M0 cluster** on [MongoDB Atlas](https://cloud.mongodb.com), set DB user credentials, and allow `0.0.0.0/0` for IP access.
+
+### 3️⃣ AWS Credentials
+
+```bash
+export AWS_ACCESS_KEY_ID=<your-key>
+export AWS_SECRET_ACCESS_KEY=<your-secret>
+export AWS_DEFAULT_REGION=us-east-1
+```
+
+> Create an IAM user with `AdministratorAccess`, then create an S3 bucket `my-model-mlopsproj` in `us-east-1`.
+
+### 4️⃣ Run ML Pipeline
+
+```bash
+python demo.py        # runs full ingestion → training pipeline
+```
+
+### 5️⃣ Docker Build & Run Locally
+
+```bash
+docker build -t fintech-app:latest .
+docker run -p 5000:5000 fintech-app:latest
+# Visit http://localhost:5000
+```
+
+### 6️⃣ Deploy to AWS EC2 via CI/CD
+
+Add the following secrets to your GitHub repository:
+
+| Secret | Value |
+|---|---|
+| `AWS_ACCESS_KEY_ID` | IAM user access key |
+| `AWS_SECRET_ACCESS_KEY` | IAM user secret key |
+| `AWS_DEFAULT_REGION` | `us-east-1` |
+| `ECR_REPO` | Your ECR repository URI |
+
+Every push to `main` triggers:
+```
+Test → Docker Build → Push to ECR → Pull & Run on EC2 (self-hosted runner)
+```
+
+Access the live app at `http://<EC2-public-ip>:5000`
+
+---
+
+## 🔄 ML Pipeline Stages
+
+```
+📥 Data Ingestion
+   └── Fetch from MongoDB Atlas → save raw artifact
+
+🔍 Data Validation
+   └── Schema check (config/schema.yaml) → drift detection → validation report
+
+🔄 Data Transformation
+   └── Feature engineering → preprocessing pipeline → transformed artifact
+
+🏋️ Model Training
+   └── Scikit-Learn estimator → train/test split → model artifact
+
+📊 Model Evaluation
+   └── Compare vs production model in S3 → accept/reject decision
+
+📦 Model Pusher
+   └── Push accepted model to S3 bucket → ready for inference
 ```
 
 ---
 
-### 3️⃣ Setup MongoDB Atlas
+## 📐 Design Decisions
 
-* MongoDB Atlas Configuration
-1. Sign up for MongoDB Atlas and create a new project.
-2. Set up a free M0 cluster, configure the username and password, and allow access from any IP address (0.0.0.0/0).
-3. Retrieve the MongoDB connection string for Python and save it (replace <password> with your password).
-* Pushing Data to MongoDB
-1. Create a folder named notebook, add the dataset, and create a notebook file mongoDB_demo.ipynb.
-2. Use the notebook to push data to the MongoDB database.
-3. Verify the data in MongoDB Atlas under Database > Browse Collections.
+**Why MongoDB Atlas over a relational DB?**
+Fintech transaction and customer data is often semi-structured and schema-flexible. MongoDB Atlas handles this natively and provides cloud-hosted access without infra overhead.
 
-* Create **M0 cluster**, set DB user + password
-* Add IP: `0.0.0.0/0`
-* Get **connection string** (Python driver, v3.6+)
-* Save as environment variable `MONGODB_URL`
+**Why self-hosted EC2 runner over GitHub-hosted?**
+Self-hosted runners allow the CI/CD pipeline to deploy directly onto the same EC2 instance that serves the app — no external SSH or deploy keys needed, and it keeps AWS egress costs zero.
 
----
-
-📝 Logging, Exception Handling, and EDA
-
-* Set Up Logging and Exception Handling
-* Create logging and exception handling modules. Test them on a demo file demo.py.
-* Exploratory Data Analysis (EDA) and Feature Engineering
-* Analyze and engineer features in the EDA and Feature Engg notebook for further processing in the pipeline.
-
----
-
-### 4️⃣ Run Notebooks
-
-* `notebook/mongoDB_demo.ipynb` → push sample data to MongoDB
-* `EDA & Feature Engineering` notebooks
-
----
-
-### 5️⃣ Data Pipeline Components
-
-* Data Ingestion Pipeline
-* Define MongoDB connection functions in configuration.mongo_db_connections.py.
-* Develop data ingestion components in the data_access and components.data_ingestion.py files to fetch and transform data.
-* Update entity/config_entity.py and entity/artifact_entity.py with relevant ingestion configurations.
-* Run demo.py after setting up MongoDB connection as an environment variable.
-
-Setting Environment Variables
-Set MongoDB URL:
-
-1. For Bash-
-export MONGODB_URL="mongodb+srv://<username>:<password>...."
-
-2. For Powershell-
-$env:MONGODB_URL = "mongodb+srv://<username>:<password>...."
-
-Note: On Windows, you can also set environment variables through the system settings.
-
----
-
-🔍 Data Validation, Transformation & Model Training
-
-* Data Validation
-Define schema in config.schema.yaml and implement data validation functions in utils.main_utils.py.
-* Data Transformation
-Implement data transformation logic in components.data_transformation.py and create estimator.py in the entity folder.
-* Model Training
-Define and implement model training steps in components.model_trainer.py using code from estimator.py.
-
----
-
-### 🌐 AWS Setup for Model Evaluation & Deployment
-
-* AWS Setup
-1. Log in to the AWS console, create an IAM user, and grant AdministratorAccess.
-
-Set AWS credentials as environment variables.
-
-  ```bash
-  export AWS_ACCESS_KEY_ID=xxx
-  export AWS_SECRET_ACCESS_KEY=yyy
-  ```
-
-2. Configure S3 Bucket and add access keys in constants.__init__.py.
-
-* Model Evaluation and Pushing to S3
-1. Create an S3 bucket named my-model-mlopsproj in the us-east-1 region.
-2. Develop code to push/pull models to/from the S3 bucket in src.aws_storage and entity/s3_estimator.py.
-
----
-
-🚀 Model Evaluation, Model Pusher, and Prediction Pipeline
-
-* Model Evaluation & Model Pusher
-1. Implement model evaluation and deployment components.
-2. Create Prediction Pipeline and set up app.py for API integration.
-Step 14: Static and Template Directory
-Add static and template directories for web UI.
-
----
-
-### 🔄 Deployment: CI/CD Setup with Docker, GitHub Actions, and AWS
-
-* Docker and GitHub Actions
-1. Create Dockerfile and .dockerignore.
-2. Set up GitHub Actions with AWS authentication by creating secrets in GitHub for:
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
-AWS_DEFAULT_REGION
-ECR_REPO
-* AWS EC2 and ECR
-1. Set up an EC2 instance for deployment.
-2. Install Docker on the EC2 machine.
-3. Connect EC2 as a self-hosted runner on GitHub.
-* Final Steps
-1. Open the 5000 port on the EC2 instance.
-2. Access the deployed app by visiting http://<public_ip>:5000.
-
----
-
-## 📈 Highlights
-
-✅ **Demonstrates full MLOps lifecycle** – data → ML → deployment
-
-✅ **Cloud-native** with AWS (IAM, S3, ECR, EC2)
-
-✅ **Production-ready CI/CD** with GitHub Actions & Docker
-
-✅ **Secure credentials** via GitHub Secrets
-
-✅ **Scalable architecture** with modular pipeline design
-
-✅ **Hands-on with both ML & DevOps** aspects
-
----
-
-## 🎯 Project Workflow Summary
-
-- 📥 **Data Ingestion** ➔ 🔍 **Data Validation** ➔ 🔄 **Data Transformation**  
-- 🤖 **Model Training** ➔ 📊 **Model Evaluation** ➔ 📦 **Model Deployment**  
-- ⚙️ **CI/CD Automation** with **GitHub Actions**, **Docker**, **AWS ECR**, and **EC2**
+**Why S3 as model registry over MLflow?**
+For this deployment pattern (single model, EC2 inference), S3 gives a lightweight, always-available model store. The `s3_estimator.py` abstraction makes push/pull clean without a full tracking server dependency.
 
 ---
 
 ## 💬 Connect
-If you found this project helpful or have any questions, feel free to reach out!
 
+<div align="center">
 
-📧 Email: sandeepdashmlops@gmail.com
+📧 **Email:** sandeepdashmlops@gmail.com
+&nbsp;&nbsp;|&nbsp;&nbsp;
+💻 **GitHub:** [github.com/sandeepdash-mlops](https://github.com/sandeepdash-mlops)
 
-💻 GitHub: https://github.com/sandeepdash-mlops
+</div>
 
 ---
 
-This README provides a structured walkthrough of the MLOps FinTech Domain project, showcasing the end-to-end pipeline, cloud integration, CI/CD setup, and robust data handling capabilities.
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,50:1a2a3a,100:0d1117&height=120&section=footer" alt="footer"/>
+
+*From raw data to live prediction — fully automated.*
+
+</div>
