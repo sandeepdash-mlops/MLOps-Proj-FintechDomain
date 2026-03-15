@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2a1a,100:0ea5e9&height=220&section=header&text=FinTech-MLOps&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Binary%20Classification%20Pipeline%20for%20BaaS%20Payment%20Prediction&descAlignY=58&descSize=20&descColor=7dd3fc" alt="FinTech MLOps Banner"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2a1a,100:0ea5e9&height=220&section=header&text=FinTech-MLOps&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Binary%20Classification%20Pipeline%20for%20BaaS%20Payment%20Prediction&descAlignY=64&descSize=20&descColor=7dd3fc" alt="FinTech MLOps Banner"/>
 
 [![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
